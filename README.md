@@ -17,25 +17,24 @@ Note that conda may be recommended, especially if you wish to work with Jupyter 
 
 
 ## To start a new project
-
 ``` bash
 cookiecutter gh:/ValentinGuigon/cookiecutter-neuro-research-project
 ```
 (*this should be run from the location that you want the project folder to live, or you will need to move the directory around later*)
 
+## To connect the new project to a GitHub repository
+
 We now want to connect this local repository to a github repo. This can be done directly from the command line using the [Github Command Line Interface](https://github.com/cli/cli#installation). You will have to install it following one of the methods described [here](https://github.com/cli/cli#installation)
 
-
-
-If using the Github Command Line Interface, simply navigate to the project root folder and type:
+1. If using the Github Command Line Interface, simply navigate to the project root folder and type:
 ``` bash
 git init -b main
 ```
 This will create a local git branch called "main".
 
-Then, go to GitHub.com and create a new remote repository as Public or Private given your project.
+2. Then, go to GitHub.com and create a new remote repository as Public or Private given your project.
 
-Finally, type in the Command Line Interface the following, by specifying your username as well as the name of the new remote repository you just created on GitHub.com:
+3. Finally, type in the Command Line Interface the following, by specifying your username as well as the name of the new remote repository you just created on GitHub.com:
 ``` bash
 git remote add origin git@github.com:<username>/<new_project>.git
 ```
