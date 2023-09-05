@@ -1,8 +1,8 @@
 ## Requirements
 
 * [Python 3](https://www.python.org/downloads/)
-* [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html)
 
+## Install cookiecutter
 You can install [Cookiecutter Python package](https://cookiecutter.readthedocs.io/en/latest/installation.html) easily with conda:
 ``` bash
 conda install -c conda-forge cookiecutter
