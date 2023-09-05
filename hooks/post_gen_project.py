@@ -47,8 +47,10 @@ if '{{cookiecutter.include_r}}' == 'yes':
     subprocess.call([command, arg, "init/init.R"], shell=True)
 
 if '{{cookiecutter.include_python}}' == 'yes':
+    current_dir = os.path.dirname(os.path.realpath(__file__))
+    parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
     subprocess.run(["python", "init/init.py"])
-    os.system(f'pip freeze > "{os.path.join(parent_dir, "requirements.txt")}"')
+    os.system(f'pip freeze > "{"requirements.txt"}"')
 
 ''' uses octave
 if '{{cookiecutter.include_matlab}}' == 'yes':
