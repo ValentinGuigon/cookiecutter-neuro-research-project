@@ -30,7 +30,6 @@ We now want to connect this local repository to a github repo. This can be done 
 ``` bash
 git init -b main
 ```
-This will create a local git branch called "main".
 
 2. Then, go to GitHub.com and create a new remote repository as Public or Private given your project.
 
