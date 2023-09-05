@@ -38,12 +38,12 @@ git init -b main
 git remote add origin git@github.com:<username>/<new_project>.git
 ```
 
-## Important to use cookiecutter when R is part of the script:
+## Important: if you choose to include R in your project from the cookiecutter script:
 **In hooks/post_gen_project.py, make sure you change line 36 to suit your situation**:
 * On Mac/Linux, the Rscript path is typically /usr/local/bin/Rscript or /usr/bin/Rscript.
 * On Windows, the path for R version X.Y.Z is typically C:/Program Files/R/R-X.Y.Z/bin/Rscript.exe
 
-## Important to use cookiecutter when MATLAB is part of the script:
+## Important: if you choose to include MATLAB in your project from the cookiecutter script:
 * The block that uses octave requires octave GNU installed, on path and working
 * The block that uses matlab engine requires to call the appropriate python version by first setting up an install
 * If no solution work, execute `init/init.m` by hand
