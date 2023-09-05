@@ -14,6 +14,7 @@ def remove(filepath):
         shutil.rmtree(filepath)
 
 
+# No-init actions
 if not '{{cookiecutter.include_python}}' == 'yes':
     remove('init/__init__.py')
 
@@ -28,17 +29,26 @@ if not '{{cookiecutter.include_r}}' == 'yes':
 if not '{{cookiecutter.include_python}}' == 'yes' and not '{{cookiecutter.include_matlab}}' == 'yes' and not '{{cookiecutter.include_r}}' == 'yes':
     remove('init/')
 
-    
+
+
+# Remove un-used files
 if not '{{cookiecutter.create_author_file}}' == 'yes':
     remove('AUTHORS.md')
     
 if '{{ cookiecutter.open_source_license }}' == 'Not open source':
     remove('LICENSE')
 
+
+
+# Init
 if '{{cookiecutter.include_r}}' == 'yes':
     command = 'C:/Program Files/R/R-4.3.1/bin/x64/Rscript'
     arg = '--vanilla' 
     subprocess.call([command, arg, "init/init.R"], shell=True)
+
+if '{{cookiecutter.include_python}}' == 'yes':
+    subprocess.run(["python", "init/init.py"])
+    os.system(f'pip freeze > "{os.path.join(parent_dir, "requirements.txt")}"')
 
 ''' uses octave
 if '{{cookiecutter.include_matlab}}' == 'yes':
@@ -57,6 +67,13 @@ if '{{cookiecutter.include_matlab}}' == 'yes':
     eng.init(nargout=0)
 '''
 
+
+
 # Make the shell scripts executable
 for sh_script in glob("*.sh"):
     os.chmod(sh_script, 0o744)
+
+
+
+# Remove init folder at the end of the post_gen
+remove('init/')

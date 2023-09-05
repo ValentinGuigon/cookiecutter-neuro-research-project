@@ -36,18 +36,19 @@ By {{cookiecutter.full_name}}
 
 {%- if cookiecutter.include_python == 'yes' %}
 
-A conda environment is specified in environment.yml and may be install using the appropriate bash scripts.
+An environment is specified in requirements.txt and may be installed using the appropriate bash scripts.
 
 To install:
 ```
-./install_environment.sh
+pip install -r requirements.txt
 ```
-To remove:
+To update the list of requirements:
 ```
-./remove_environment.sh
+pip freeze requirements.txt
 ```
-These also install/remove the jupyter kernel for the environment.
-> If these don't execute, you might need to change the file permissions with chmod u+x *.sh.
+
+A conda environment.yml may be more suitable if you want to install/remove jupyter kernels for the environment.
+> In such a case, if these don't execute, you might need to change the file permissions with chmod u+x *.sh.
 
 {%- endif %}
 
