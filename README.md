@@ -51,6 +51,7 @@ git remote add origin git@github.com:<username>/<new_project>.git
 # Project Structure
 This structure is adapted from the TIER protocol 4.0 (https://www.projecttier.org/tier-protocol/protocol-4-0/root/). Each folder and subfolder has to have a descriptive and meaningful name, contains the files that are supposed to be in there, and a readme file documents the content of each.
 
+```
 {{dir_name}}/
     ├── LICENSE
     ├── README.md          <- Top-level README for people using this project.
@@ -144,3 +145,4 @@ This structure is adapted from the TIER protocol 4.0 (https://www.projecttier.or
     │   └──  init.R         <- Initiate a R environment.
 {%- endif %}
     |
+```
