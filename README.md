@@ -52,20 +52,19 @@ git remote add origin git@github.com:<username>/<new_project>.git
 This structure is adapted from the TIER protocol 4.0 (https://www.projecttier.org/tier-protocol/protocol-4-0/root/). Each folder and subfolder has to have a descriptive and meaningful name, contains the files that are supposed to be in there, and a readme file documents the content of each.
 
 ```
-    |
-    ├── LICENSE
+    ┌── LICENSE
     ├── README.md          <- Top-level README for people using this project.
-( if author file )
+    ( if author file )
     ├── AUTHORS.md         <- Author information.
     |
     ├── .gitattributes     <- Set-up the directory.
     ├── .gitignore         <- Set-up the directory and tells Git which files to ignore.
     ├── .gitkeep           <- Set-up the directory and tells Git to keep the folder when empty.
     |
-( if project includes matlab )
+    ( if project includes matlab )
     ├── {{dir_name}}.prj  <- MATLAB project.
     |
-( if project includes R )
+    ( if project includes R )
     ├── {{dir_name}}.Rprj <- R project.
     ├── .Rhistory          <- R history.
     ├── .Rprofile          <- R profile.
@@ -82,14 +81,14 @@ This structure is adapted from the TIER protocol 4.0 (https://www.projecttier.or
     │   ├── reports        <- Reports on analyses, such as html output from notebooks.
     │   └── README.md      <- Information on reports. 
     |
-( if project includes matlab )
+    ( if project includes matlab )
     ├── matlab_toolboxes/  <- A place for 3rd party MATLAB toolboxes.
     │   ├── toolbox/
     │   └── get_toolbox.sh <- Script to download toolboxes.
     |   └── README.md      <- Information on toolboxes. 
     |
     ├── output/            <- Saved figures, tables and other outputs generated during analysis.
-( if project includes R )
+    ( if project includes R )
     │   ├── R_environments <- Contains R environments, output by .R files and input of .Rmd files.
     │   ├── figures        <- Contains figures presented in the Journal Article.
     │   ├── supplementary  <- Contains figures presented in the Supplementary Materials.
@@ -102,13 +101,13 @@ This structure is adapted from the TIER protocol 4.0 (https://www.projecttier.or
     │   ├── scripts
     │   └── README.md
     |
-( if project includes R )
+    ( if project includes R )
     ├── renv/              <- R renv to restore a snapshot of R environment containing installed packages with versioning. Executed by R `renv::activate()`
     │   ├── activate.R
     │   ├── settings.json
     │   └── README.md      <- Information on the snapshot of libraries. 
     |
-( if project includes matlab )
+    ( if project includes matlab )
     ├── resources/project/ <- Contains the MATLAB project
     │   └── ...      
     │
@@ -125,14 +124,15 @@ This structure is adapted from the TIER protocol 4.0 (https://www.projecttier.or
     │   └── ...      
     |
     ├── init/           <- Contains the init scripts
-( if project includes python )
+    |
+    ( if project includes python )
     │   ├── __init__.py    <- Initiate a python package.
     │   └── module.py      <- A Python module.
     |
-( if project includes matlab )
+    ( if project includes matlab )
     │   └── init.m         <- Initiate a MATLAB environment.
     |
-( if project includes R )
-    │   └──  init.R         <- Initiate a R environment.
-    |
+    ( if project includes R )
+        └──  init.R         <- Initiate a R environment.
+    
 ```
