@@ -52,27 +52,24 @@ git remote add origin git@github.com:<username>/<new_project>.git
 This structure is adapted from the TIER protocol 4.0 (https://www.projecttier.org/tier-protocol/protocol-4-0/root/). Each folder and subfolder has to have a descriptive and meaningful name, contains the files that are supposed to be in there, and a readme file documents the content of each.
 
 ```
-{{dir_name}}/
+    |
     ├── LICENSE
     ├── README.md          <- Top-level README for people using this project.
-{%- if cookiecutter.create_author_file == 'yes' %}
+( if author file )
     ├── AUTHORS.md         <- Author information.
-{%- endif %}
     |
     ├── .gitattributes     <- Set-up the directory.
     ├── .gitignore         <- Set-up the directory and tells Git which files to ignore.
     ├── .gitkeep           <- Set-up the directory and tells Git to keep the folder when empty.
     |
-{%- if cookiecutter.include_matlab == 'yes' %}
+( if project includes matlab )
     ├── {{dir_name}}.prj  <- MATLAB project.
-{%- endif %}
     |
-{%- if cookiecutter.include_r == 'yes' %}
+( if project includes R )
     ├── {{dir_name}}.Rprj <- R project.
     ├── .Rhistory          <- R history.
     ├── .Rprofile          <- R profile.
     ├── renv.lock          <- Lock for R renv.
-{%- endif %}    
     |
     ├── data/
     │   ├── raw            <- Data files initially obtained or constructed at the beginning of the project.
@@ -85,17 +82,15 @@ This structure is adapted from the TIER protocol 4.0 (https://www.projecttier.or
     │   ├── reports        <- Reports on analyses, such as html output from notebooks.
     │   └── README.md      <- Information on reports. 
     |
-{%- if cookiecutter.include_matlab == 'yes' %}
+( if project includes matlab )
     ├── matlab_toolboxes/  <- A place for 3rd party MATLAB toolboxes.
     │   ├── toolbox/
     │   └── get_toolbox.sh <- Script to download toolboxes.
     |   └── README.md      <- Information on toolboxes. 
-{%- endif %}    
     |
     ├── output/            <- Saved figures, tables and other outputs generated during analysis.
-{%- if cookiecutter.include_r == 'yes' %}
+( if project includes R )
     │   ├── R_environments <- Contains R environments, output by .R files and input of .Rmd files.
-{%- endif %}   
     │   ├── figures        <- Contains figures presented in the Journal Article.
     │   ├── supplementary  <- Contains figures presented in the Supplementary Materials.
     │   └── README.md      <- Information on data outputs and about scripts that produce them. 
@@ -107,17 +102,15 @@ This structure is adapted from the TIER protocol 4.0 (https://www.projecttier.or
     │   ├── scripts
     │   └── README.md
     |
-{%- if cookiecutter.include_r == 'yes' %}
+( if project includes R )
     ├── renv/              <- R renv to restore a snapshot of R environment containing installed packages with versioning. Executed by R `renv::activate()`
     │   ├── activate.R
     │   ├── settings.json
     │   └── README.md      <- Information on the snapshot of libraries. 
-{%- endif %}  
     |
-{%- if cookiecutter.include_matlab == 'yes' %}
+( if project includes matlab )
     ├── resources/project/ <- Contains the MATLAB project
     │   └── ...      
-{%- endif %} 
     │
     ├── scripts/           <- Jupyter notebooks, MATLAB code and anything else that constitutes analysis.
     │   ├── extraction     <- Preprocessing scripts that extract data from raw files for processing.
@@ -132,17 +125,14 @@ This structure is adapted from the TIER protocol 4.0 (https://www.projecttier.or
     │   └── ...      
     |
     ├── init/           <- Contains the init scripts
-{%- if cookiecutter.include_python == 'yes' %}
+( if project includes python )
     │   ├── __init__.py    <- Initiate a python package.
     │   └── module.py      <- A Python module.
-{%- endif %}
     |
-{%- if cookiecutter.include_matlab == 'yes' %}
+( if project includes matlab )
     │   └── init.m         <- Initiate a MATLAB environment.
-{%- endif %}
     |
-{%- if cookiecutter.include_r == 'yes' %}
+( if project includes R )
     │   └──  init.R         <- Initiate a R environment.
-{%- endif %}
     |
 ```
